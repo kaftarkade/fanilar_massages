@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#176b45">
+
+    <title>پیام‌رسان حلقات صالحین</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body class="messenger-page">
+
+    <header class="messenger-header">
+        <a href="index.html" class="messenger-brand">
+            <span class="brand-icon">ح</span>
+            <span>
+                <strong>حلقات صالحین</strong>
+                <small>پیام‌رسان پایگاه</small>
+            </span>
+        </a>
+
+        <a href="profile.html" class="account-button">
+            <span>👤</span>
+            <span>پروفایل من</span>
+        </a>
+    </header>
+
+    <main class="messenger-main">
+
+        <nav class="messenger-tabs" aria-label="بخش‌های پیام‌رسان">
+            <button
+                class="messenger-tab active"
+                type="button"
+                data-tab="groups"
+                aria-selected="true">
+                <span>👥</span>
+                گروه‌ها
+            </button>
+
+            <button
+                class="messenger-tab"
+                type="button"
+                data-tab="channels"
+                aria-selected="false">
+                <span>📢</span>
+                کانال‌ها
+            </button>
+        </nav>
+
+        <section class="tab-panel" id="groups-panel">
+            <div class="list-heading">
+                <div>
+                    <h1>گروه‌های من</h1>
+                    <p>گفتگوهای حلقهٔ شما</p>
+                </div>
+                <span class="section-symbol">👥</span>
+            </div>
+
+            <a href="chat.html?type=ring" class="conversation-item">
+                <div class="conversation-avatar ring-avatar">حلقه</div>
+
+                <div class="conversation-details">
+                    <div class="conversation-title">
+                        <h2 id="ringName">حلقه صالحین</h2>
+                        <span class="member-status">گروه</span>
+                    </div>
+                    <p>گفتگو با اعضای حلقهٔ اختصاصی شما</p>
+                </div>
+
+                <span class="conversation-arrow">←</span>
+            </a>
+
+            <div class="empty-hint">
+                <span>🔐</span>
+                <p>
+                    عضویت و دسترسی به حلقه بر اساس فهرست
+                    تأییدشدهٔ پایگاه تعیین می‌شود.
+                </p>
+            </div>
+        </section>
+
+        <section class="tab-panel" id="channels-panel" hidden>
+            <div class="list-heading">
+                <div>
+                    <h1>کانال‌ها</h1>
+                    <p>اطلاعیه‌های رسمی پایگاه</p>
+                </div>
+                <span class="section-symbol">📢</span>
+            </div>
+
+            <a href="chat.html?type=announcements"
+               class="conversation-item">
+                <div class="conversation-avatar channel-avatar">📢</div>
+
+                <div class="conversation-details">
+                    <div class="conversation-title">
+                        <h2>اطلاع رسانی پایگاه</h2>
+                        <span class="member-status">کانال</span>
+                    </div>
+                    <p>اخبار، برنامه‌ها و اطلاع‌رسانی‌های رسمی</p>
+                </div>
+
+                <span class="conversation-arrow">←</span>
+            </a>
+
+            <div class="empty-hint">
+                <span>📌</span>
+                <p>
+                    پیام‌های کانال پس از اتصال سرور
+                    در این قسمت نمایش داده می‌شوند.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="messenger-footer">
+        پیام‌رسان اختصاصی حلقات صالحین
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

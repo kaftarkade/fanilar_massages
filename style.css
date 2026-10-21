@@ -1,0 +1,900 @@
+
+/* ========================================
+   پیام‌رسان حلقات صالحین
+   استایل اصلی
+======================================== */
+
+@font-face {
+    font-family: "Vazirmatn";
+    src: url("../fonts/Vazirmatn-Bold.woff2") format("woff2");
+    font-weight: 700 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --main-color: #176b45;
+    --main-dark: #104d33;
+    --main-light: #e8f4ed;
+    --background: #f5f8f6;
+    --surface: #ffffff;
+    --text: #1c2922;
+    --muted: #78857d;
+    --border: #e5ece7;
+    --radius: 20px;
+    --shadow: 0 8px 28px rgba(22, 73, 47, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Vazirmatn", Tahoma, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.9;
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* نوار بالایی */
+
+.topbar {
+    width: 100%;
+    min-height: 82px;
+    padding: 14px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.94);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    z-index: 10;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.brand-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 15px;
+    color: #fff;
+    background: linear-gradient(
+        145deg,
+        #27885b,
+        #125437
+    );
+    font-size: 25px;
+    box-shadow: 0 5px 14px rgba(23, 107, 69, 0.2);
+}
+
+.brand-text h1 {
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 1.8;
+}
+
+.brand-text p {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.login-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 20px;
+    border: 1px solid var(--main-color);
+    border-radius: 12px;
+    color: var(--main-color);
+    background: #fff;
+    font-size: 13px;
+    font-weight: 800;
+    transition: 0.25s ease;
+    white-space: nowrap;
+}
+
+.login-button:hover {
+    color: #fff;
+    background: var(--main-color);
+    transform: translateY(-2px);
+}
+
+/* محتوای صفحه */
+
+.container {
+    width: min(1120px, 88%);
+    margin: 38px auto 60px;
+}
+
+/* کارت خوشامدگویی */
+
+.welcome-card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    padding: 48px;
+    border-radius: 28px;
+    color: #fff;
+    background: linear-gradient(
+        120deg,
+        #104d33 0%,
+        #176b45 58%,
+        #27885b 100%
+    );
+    box-shadow: 0 18px 40px rgba(16, 77, 51, 0.14);
+    animation: fadeUp 0.7s ease both;
+}
+
+.welcome-card::before {
+    content: "";
+    position: absolute;
+    width: 310px;
+    height: 310px;
+    left: -90px;
+    top: -150px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.welcome-card::after {
+    content: "";
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    left: -35px;
+    top: -100px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.welcome-label {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 5px 13px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.09);
+    color: #e0f4e7;
+    font-size: 12px;
+}
+
+.welcome-card h2 {
+    max-width: 600px;
+    margin-bottom: 14px;
+    font-size: clamp(25px, 4vw, 39px);
+    line-height: 1.8;
+    font-weight: 900;
+}
+
+.welcome-card > p {
+    max-width: 570px;
+    margin-bottom: 26px;
+    color: #e0eee5;
+    font-size: 14px;
+    line-height: 2.2;
+}
+
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 12px 21px;
+    border-radius: 13px;
+    background: #fff;
+    color: var(--main-dark);
+    font-size: 13px;
+    font-weight: 900;
+    transition: 0.25s ease;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.13);
+}
+
+.primary-button span {
+    font-size: 19px;
+}
+
+.welcome-decoration {
+    position: absolute;
+    left: 8%;
+    bottom: -85px;
+    width: 240px;
+    height: 240px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.08);
+    font-size: 190px;
+    font-weight: 900;
+    pointer-events: none;
+}
+
+/* عنوان بخش */
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 42px 0 20px;
+}
+
+.section-heading h2 {
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.section-heading p {
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* کارت‌های اصلی */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.feature-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+    animation: fadeUp 0.65s ease both;
+}
+
+.feature-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.feature-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    border-color: #a9d5bb;
+    box-shadow: 0 13px 30px rgba(22, 73, 47, 0.09);
+}
+
+.feature-icon {
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 17px;
+    background: var(--main-light);
+    font-size: 24px;
+}
+
+.announcement-card .feature-icon {
+    background: #fff1d9;
+}
+
+.feature-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.feature-info h3 {
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.feature-info p {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 2;
+}
+
+.feature-arrow {
+    color: var(--main-color);
+    font-size: 22px;
+    transition: transform 0.25s ease;
+}
+
+.feature-card:hover .feature-arrow {
+    transform: translateX(-4px);
+}
+
+/* یادآوری امنیتی */
+
+.security-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 25px;
+    padding: 21px;
+    border: 1px solid #dcebe0;
+    border-radius: 18px;
+    background: #edf6ef;
+}
+
+.security-icon {
+    font-size: 23px;
+}
+
+.security-notice h3 {
+    margin-bottom: 4px;
+    color: var(--main-dark);
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.security-notice p {
+    color: #587061;
+    font-size: 12px;
+    line-height: 2.1;
+}
+
+/* پابرگ */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 25px 15px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    text-align: center;
+    font-size: 12px;
+}
+
+.footer p {
+    color: var(--text);
+    font-weight: 900;
+}
+
+/* انیمیشن */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================
+   چیدمان اصلی پیام‌رسان
+======================================== */
+
+.messenger-page {
+    min-height: 100vh;
+    background: #f3f7f4;
+}
+
+.messenger-header {
+    min-height: 76px;
+    padding: 12px max(5%, calc((100% - 1100px) / 2));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    background: #fff;
+    border-bottom: 1px solid #e3ebe5;
+}
+
+.messenger-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 0;
+}
+
+.messenger-brand > span:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.messenger-brand strong {
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.messenger-brand small {
+    color: #78857d;
+    font-size: 11px;
+}
+
+.account-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 13px;
+    border: 1px solid #e0e9e2;
+    border-radius: 13px;
+    background: #f8fbf9;
+    color: #176b45;
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+    transition: 0.2s ease;
+}
+
+.account-button:hover {
+    background: #e8f4ed;
+}
+
+.messenger-main {
+    width: min(100% - 32px, 850px);
+    min-height: 470px;
+    margin: 28px auto;
+    overflow: hidden;
+    border: 1px solid #e4ebe5;
+    border-radius: 21px;
+    background: #fff;
+    box-shadow: 0 8px 30px rgba(25, 70, 45, 0.05);
+}
+
+/* تب‌های بالای صفحه */
+
+.messenger-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-bottom: 1px solid #e8eee9;
+    background: #fff;
+}
+
+.messenger-tab {
+    position: relative;
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: 0;
+    background: transparent;
+    color: #7a867e;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.messenger-tab:hover {
+    background: #f7faf8;
+    color: #176b45;
+}
+
+.messenger-tab.active {
+    color: #176b45;
+}
+
+.messenger-tab.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+    width: 60%;
+    height: 3px;
+    border-radius: 5px 5px 0 0;
+    background: #176b45;
+}
+
+.messenger-tab span {
+    font-size: 18px;
+}
+
+/* فهرست گروه‌ها و کانال‌ها */
+
+.tab-panel {
+    padding: 25px;
+    animation: fadeUp 0.25s ease both;
+}
+
+.tab-panel[hidden] {
+    display: none;
+}
+
+.list-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.list-heading h1 {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.list-heading p {
+    margin-top: 4px;
+    color: #7a867e;
+    font-size: 12px;
+}
+
+.section-symbol {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    background: #eaf4ed;
+    font-size: 22px;
+}
+
+.conversation-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 17px;
+    border: 1px solid #e8eee9;
+    border-radius: 17px;
+    background: #fff;
+    transition: 0.2s ease;
+}
+
+.conversation-item:hover {
+    border-color: #b8d9c3;
+    background: #f9fcfa;
+    transform: translateY(-2px);
+}
+
+.conversation-avatar {
+    width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 17px;
+    font-size: 24px;
+}
+
+.ring-avatar {
+    color: #fff;
+    background: linear-gradient(145deg, #27885b, #125437);
+    font-weight: 900;
+}
+
+.channel-avatar {
+    background: #fff1d9;
+}
+
+.conversation-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.conversation-title {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.conversation-title h2 {
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.member-status {
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: #eaf4ed;
+    color: #176b45;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.conversation-details p {
+    color: #78857d;
+    font-size: 11px;
+    line-height: 2;
+}
+
+.conversation-arrow {
+    color: #176b45;
+    font-size: 21px;
+}
+
+.empty-hint {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 14px;
+    border-radius: 13px;
+    background: #f5f8f6;
+    color: #66766b;
+    font-size: 11px;
+    line-height: 2.1;
+}
+
+.empty-hint > span {
+    flex-shrink: 0;
+}
+
+.messenger-footer {
+    padding: 20px 12px;
+    color: #839087;
+    font-size: 11px;
+    text-align: center;
+}
+
+```css
+/* =================================
+   AUTH PAGES - حلقات صالحین
+================================= */
+
+.auth-page {
+    min-height: 100vh;
+    margin: 0;
+    padding: 28px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(46, 125, 82, 0.12),
+            transparent 38%
+        ),
+        #f3f7f3;
+    font-family: "VazirmatnBold", sans-serif;
+    color: #20382a;
+    box-sizing: border-box;
+}
+
+.auth-page *,
+.auth-page *::before,
+.auth-page *::after {
+    box-sizing: border-box;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 32px 26px;
+    background: #ffffff;
+    border: 1px solid #e5eee7;
+    border-radius: 24px;
+    box-shadow: 0 14px 45px rgba(28, 74, 45, 0.09);
+    animation: authAppear 0.45s ease both;
+}
+
+.auth-logo {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #287748, #55a56e);
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 900;
+    box-shadow: 0 8px 20px rgba(40, 119, 72, 0.2);
+}
+
+.auth-card h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 23px;
+    line-height: 1.8;
+    color: #245b38;
+}
+
+.auth-description {
+    margin: 10px 0 26px;
+    text-align: center;
+    color: #77877b;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-card form label {
+    margin-top: 7px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #355541;
+}
+
+.auth-card input {
+    width: 100%;
+    min-height: 49px;
+    padding: 12px 14px;
+    border: 1px solid #dce7de;
+    border-radius: 12px;
+    background: #f9fbf9;
+    color: #20382a;
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.auth-card input::placeholder {
+    color: #a0aca3;
+}
+
+.auth-card input:focus {
+    border-color: #388653;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(56, 134, 83, 0.12);
+}
+
+.auth-submit {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 14px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 13px;
+    background: linear-gradient(135deg, #246d40, #3d955b);
+    color: #ffffff;
+    font: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 7px 18px rgba(36, 109, 64, 0.17);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.auth-submit:hover {
+    box-shadow: 0 10px 24px rgba(36, 109, 64, 0.24);
+}
+
+.auth-submit:active {
+    transform: scale(0.98);
+}
+
+.auth-footer {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    font-size: 13px;
+    color: #78857d;
+}
+
+.auth-footer a {
+    color: #287748;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+.form-message {
+    margin: 4px 0 0;
+    color: #a33b35;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.auth-footnote {
+    margin: 18px 0 0;
+    text-align: center;
+    color: #89968d;
+    font-size: 11px;
+    line-height: 2;
+}
+
+@keyframes authAppear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* نمایش در گوشی */
+@media (max-width: 480px) {
+    .auth-page {
+        padding: 18px 12px;
+        align-items: center;
+    }
+
+    .auth-card {
+        padding: 26px 19px;
+        border-radius: 20px;
+    }
+
+    .auth-card h1 {
+        font-size: 21px;
+    }
+
+    .auth-logo {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+    }
+
+    .auth-description {
+        font-size: 12px;
+    }
+}
+
+/* کاهش انیمیشن برای کاربرانی که آن را غیرفعال کرده‌اند */
+@media (prefers-reduced-motion: reduce) {
+    .auth-card,
+    .auth-card *,
+    .auth-card *::before,
+    .auth-card *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+```
